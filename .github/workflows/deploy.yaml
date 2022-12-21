@@ -20,5 +20,5 @@ jobs:
       - name: Download artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: files
+          name: resume
           path: public/
