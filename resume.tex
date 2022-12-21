@@ -1,0 +1,165 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Twenty Seconds Resume/CV
+% LaTeX Template
+% Version 1.1 (8/1/17)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Carmine Spagnuolo (cspagnuolo@unisa.it) with major modifications by
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[letterpaper]{twentysecondcv} % a4paper for A4
+
+%----------------------------------------------------------------------------------------
+%	 PERSONAL INFORMATION
+%----------------------------------------------------------------------------------------
+
+% If you don't need one or more of the below, just remove the content leaving the command, e.g. \cvnumberphone{}
+
+\profilepic{me.jpeg} % Profile picture
+
+\cvname{Michael} % Your name
+\cvjobtitle{Sr. DevOps Engineer} % Job title/career
+
+\cvdate{27 February 1970} % Date of birth
+\cvaddress{Kansas City, MO} % Short address/location, use \newline if more than 1 line is required
+\cvnumberphone{847-571-7122} % Phone number
+\cvsite{https://en.wikipedia.org} % Personal website
+\cvmail{mp@michaelpporter.com} % Email address
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	 ABOUT ME
+%----------------------------------------------------------------------------------------
+
+\aboutme{Decisive, knowledgeable, and tenacious DevOps Engineer who exemplifies Kaizen, a passion for continual improvement, and efficiency. A highly valued problem-solver and a change leader.} % To have no About Me section, just remove all the text and leave \aboutme{}
+
+%----------------------------------------------------------------------------------------
+%	 SKILLS
+%----------------------------------------------------------------------------------------
+
+% Skill bar section, each skill must have a value between 0 an 6 (float)
+\skills{{Jenkins/5},{Kubernetes/4.5},{Terraform/5},{Helm/4.3}}
+
+%------------------------------------------------
+
+% Skill text section, each skill must have a value between 0 an 6
+\skillstext{{Ansible/4},{Consul/3},{Docker/4.5}}
+
+%----------------------------------------------------------------------------------------
+
+\makeprofile % Print the sidebar
+
+%----------------------------------------------------------------------------------------
+%	 INTERESTS
+%----------------------------------------------------------------------------------------
+
+\section{Interests}
+
+A life-long learner, with a focus on continual improvement.
+
+%----------------------------------------------------------------------------------------
+%	 EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section{Experience}
+
+\begin{twenty} % Environment for a list with descriptions
+	\twentyitem{2019-present}{Showtime}{Sr. DevOps Engineer}{}
+	\twentyitem{2019-2019}{Signafire}{DevOps Engineer}{Supported ongoing efforts to establish DevOps practices migrated existing monitoring solution to Sensu. Setup Grafana/Graphite to chart Sensu ElasticSearch performance metrics. Built Ansible roles to build and install custom Node and Clojure applications. Created new EC2 instances with Terraform/Terragrunt. Built extendible Terraform modules to support turn-key infrastructure provisioning. Implemented JumpCloud LDAP for JIRA, Confluence, GSuite and GitLab. Supported cross-functional development team.}
+	\twentyitem{2013-2019}{Xeno Media}{Lead Developer}{Developed, promoted, and maintained a CI/CD workflow with GitHub, Jenkins, commit-based Behat testing on Full LAMP Stacks (DigitalOcean hosted). Created Ansible playbooks for server builds. Adapted Docker4Drupal with custom robo.li commands for single command startup. Linked JIRA, GitHub, and Jenkins to Slack for improved communication. Built Drupal modules for client projects, including CSV and Salesforce Import.}
+	\twentyitem{2008-2013}{Duo Consulting}{Drupal Maintenance / Operations Developer}{Maintained and optimized performance for hosted Drupal sites: trouble-shooting, fixing bugs, reviewing slow query logs, and optimizing queries. In collaboration with project managers and clients tracked and fixed issues with site functionality and built new modules for existing sites.}
+	\twentyitem{2006-2008}{Vitaltype}{Lead Developer}{Developed and architected a HIPAA compliant transcription system for managing audio files from doctor's offces to transcription services, whose documents were submitted back to the doctors. This started as a ColdFusion application with a SQL Server back end and was migrated to Flex using LiveCycle Data Services running on AWS EC2 and RDS.}
+	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
+\end{twenty}
+
+%----------------------------------------------------------------------------------------
+%	 AWARDS
+%----------------------------------------------------------------------------------------
+
+\section{Awards}
+
+\begin{twentyshort} % Environment for a short list with no descriptions
+	\twentyitemshort{2018}{Jenkins Engineer}
+	\twentyitemshort{2021}{AWS Certified Cloud Practitioner}
+	%\twentyitemshort{<dates>}{<title/description>}
+\end{twentyshort}
+
+%----------------------------------------------------------------------------------------
+%	 EDUCATION
+%----------------------------------------------------------------------------------------
+
+\section{Professional Contributions}
+
+\begin{twenty} % Environment for a list with descriptions
+	\twentyitem{2019}{Sensu-Ansible GitHub}{Sensu-Ansible}{Updated ansible from 2.3 to 2.7, fixing tags. Updated variables to prefix to the sensu namespace. Fix Galaxy linting issues.}
+	\twentyitem{2017}{DrupalCamp}{Speaker}{Using Jenkins with Drupal}
+	\twentyitem{2017}{MidCamp}{Speaker}{Automating Drupal with Jenkins}
+	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
+\end{twenty}
+
+%----------------------------------------------------------------------------------------
+%	 PUBLICATIONS
+%----------------------------------------------------------------------------------------
+
+% \section{Publications}
+
+% \begin{twentyshort} % Environment for a short list with no descriptions
+% 	\twentyitemshort{1865}{Chapter One, Down the Rabbit Hole.}
+% 	\twentyitemshort{1865}{Chapter Two, The Pool of Tears.}
+% 	\twentyitemshort{1865}{Chapter Three,  The Caucus Race and a Long Tale.}
+% 	\twentyitemshort{1865}{Chapter Four,  The Rabbit Sends a Little Bill.}
+% 	\twentyitemshort{1865}{Chapter Five,  Advice from a Caterpillar.}
+% 	%\twentyitemshort{<dates>}{<title/description>}
+% \end{twentyshort}
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	 OTHER INFORMATION
+%----------------------------------------------------------------------------------------
+
+% \section{Other information}
+
+% \subsection{Review}
+
+% Alice approaches Wonderland as an anthropologist, but maintains a strong sense of noblesse oblige that comes with her class status. She has confidence in her social position, education, and the Victorian virtue of good manners. Alice has a feeling of entitlement, particularly when comparing herself to Mabel, whom she declares has a ``poky little house," and no toys. Additionally, she flaunts her limited information base with anyone who will listen and becomes increasingly obsessed with the importance of good manners as she deals with the rude creatures of Wonderland. Alice maintains a superior attitude and behaves with solicitous indulgence toward those she believes are less privileged.
+
+%----------------------------------------------------------------------------------------
+%	 SECOND PAGE EXAMPLE
+%----------------------------------------------------------------------------------------
+
+% \newpage % Start a new page
+
+% \makeprofile % Print the sidebar
+
+% \section{Other information}
+
+% \subsection{Review}
+
+% Alice approaches Wonderland as an anthropologist, but maintains a strong sense of noblesse oblige that comes with her class status. She has confidence in her social position, education, and the Victorian virtue of good manners. Alice has a feeling of entitlement, particularly when comparing herself to Mabel, whom she declares has a ``poky little house," and no toys. Additionally, she flaunts her limited information base with anyone who will listen and becomes increasingly obsessed with the importance of good manners as she deals with the rude creatures of Wonderland. Alice maintains a superior attitude and behaves with solicitous indulgence toward those she believes are less privileged.
+
+%\section{Other information}
+
+%\subsection{Review}
+
+%Alice approaches Wonderland as an anthropologist, but maintains a strong sense of noblesse oblige that comes with her class status. She has confidence in her social position, education, and the Victorian virtue of good manners. Alice has a feeling of entitlement, particularly when comparing herself to Mabel, whom she declares has a ``poky little house," and no toys. Additionally, she flaunts her limited information base with anyone who will listen and becomes increasingly obsessed with the importance of good manners as she deals with the rude creatures of Wonderland. Alice maintains a superior attitude and behaves with solicitous indulgence toward those she believes are less privileged.
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
