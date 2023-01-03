@@ -20,5 +20,5 @@ jobs:
       - name: Download artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: $GITHUB_REF_NAME
+          name: ${{ GITHUB_REF_NAME }}
           path: public/
