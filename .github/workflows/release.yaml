@@ -1,12 +1,12 @@
-name: 'Generate document'
+name: 'Release resume'
 on:
-  push:
-    branches: [ main ]
+  release:
+    types: [published]
 defaults:
   run:
     working-directory: .
 jobs:
-  build_deploy:
+  release:
       runs-on: ubuntu-latest
       steps:
       - name: Checkout
@@ -20,5 +20,5 @@ jobs:
       - name: Download artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: resume
+          name: $GITHUB_REF_NAME
           path: public/
