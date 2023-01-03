@@ -1,7 +1,6 @@
-name: 'Generate document'
+name: 'Generate resume'
 on:
   push:
-    branches: [ main ]
     tags:
       - '*'
 defaults:
@@ -31,7 +30,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: v0.1-${{ github.run_number }}
-          release_name: Automated build v0.1-${{ github.run_number }}
+          release_name: Resume v0.1-${{ github.run_number }}
           draft: true
           prerelease: true
       - name: Upload Release Asset
