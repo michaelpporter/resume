@@ -1,6 +1,7 @@
 name: 'Generate resume'
 on:
   push:
+    branches: [ main ]
     tags:
       - '*'
 defaults:
