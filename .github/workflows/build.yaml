@@ -1,5 +1,4 @@
 name: 'Generate document'
-description: 'Builds resume from LaTex'
 on:
   push:
     branches: [ main ]
