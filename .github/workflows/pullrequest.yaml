@@ -1,0 +1,18 @@
+name: 'Generate resume'
+on:
+  pull_request:
+    types: [opened, reopened]
+defaults:
+  run:
+    working-directory: .
+jobs:
+  build_latex:
+      runs-on: ubuntu-latest
+      steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Tex to PDF
+        uses: ./actions/xelatex
+        env:
+          OUT_DIR: public
