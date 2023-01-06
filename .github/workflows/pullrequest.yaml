@@ -1,7 +1,7 @@
 name: 'Test build'
 on:
   pull_request:
-    types: [opened, reopened]
+    types: ["opened", "synchronize", "reopened"]
 defaults:
   run:
     working-directory: .
