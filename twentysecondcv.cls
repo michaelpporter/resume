@@ -97,7 +97,7 @@
 	\renewcommand{\skillstext}{
 		\begin{flushleft}
 			\foreach [count=\i] \x/\y in {#1}{
-				\x$ \star $\y
+				% \x$ \star $\y
 			}
 		\end{flushleft}
 	}
