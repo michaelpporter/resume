@@ -6,7 +6,7 @@
 %	 REQUIRED PACKAGES
 %----------------------------------------------------------------------------------------
 
-\RequirePackage[sfdefault]{ClearSans}
+\RequirePackage[sfdefault]{clearsans}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{tikz}
 \RequirePackage{xcolor}
