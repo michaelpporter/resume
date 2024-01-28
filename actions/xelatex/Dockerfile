@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM debian:buster
 
 LABEL "maintainer"="Michael Porter <mp@michaelpporter.com>"
 LABEL "repository"="https://github.com/michaelpporter/resume"
