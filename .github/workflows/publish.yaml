@@ -2,43 +2,32 @@ name: 'Generate resume'
 on:
   push:
     branches: [ main ]
-defaults:
-  run:
-    working-directory: .
+permissions:
+  contents: write
 jobs:
-  build_latex:
-      runs-on: ubuntu-latest
-      steps:
+  build:
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Tex to PDF
-        uses: ./actions/xelatex
-        env:
-          OUT_DIR: public
+      - name: Install Typst
+        uses: typst-community/setup-typst@v4
 
-      - name: Download artifacts
-        uses: actions/upload-artifact@v3
+      - name: Compile to PDF
+        run: |
+          mkdir -p public
+          typst compile resume.typ public/michaelpporter.pdf --input version=${GITHUB_SHA::7}
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
         with:
-          name: resume.pdf
+          name: resume-pdf
           path: public/
+
       - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v2
         with:
-          tag_name: v2024-${{ github.run_number }}
-          release_name: Resume v2024-${{ github.run_number }}
-          draft: false
-          prerelease: false
-      - name: Upload Release Asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: public/resume.pdf
-          asset_name: michaelpporter.pdf
-          asset_content_type: application/pdf
+          tag_name: v2026-${{ github.run_number }}
+          name: Resume v2026-${{ github.run_number }}
+          files: public/michaelpporter.pdf
