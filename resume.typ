@@ -30,50 +30,53 @@
     desc: [Promoted from Senior to Lead on the streaming DevSecOps team; own the
       Paramount+ CI/CD and GitOps platforms end-to-end while supporting the
       Pluto TV pipelines. Drive Jenkins (shared libraries, Kubernetes build agents,
-      Job DSL) orchestrating hundreds of multi-region deployment pipelines,
-      alongside ArgoCD GitOps (ApplicationSets, sync-window code freezes, RBAC),
-      Concourse pipeline-as-code, and Kargo progressive delivery. Migrated
-      Jenkins controllers and workloads onto a consolidated GKE streaming-tools
-      cluster, and prototyped ArgoCD federation to Oracle OKE via OIDC /
-      Workload Identity. Provision infrastructure with Terraform on GCP; embed
-      security into delivery
-      with image signing, SBOMs, External Secrets Operator, least-privilege
-      service accounts, and Renovate dependency automation.],
+      Job DSL) orchestrating *[X]+ multi-region deployment pipelines* across
+      *[Y] services*, alongside ArgoCD GitOps (ApplicationSets, sync-window code
+      freezes, RBAC), Concourse pipeline-as-code, and Kargo progressive delivery
+      — cutting median deploy time by *[Z]%* and reducing failed-deploy rollbacks
+      by *[Z]%*. Migrated Jenkins controllers and workloads onto a consolidated
+      GKE streaming-tools cluster, cutting infra spend by *[\$X]/mo*, and
+      prototyped ArgoCD federation to Oracle OKE via OIDC / Workload Identity.
+      Provision infrastructure with Terraform on GCP; embed security into
+      delivery with image signing, SBOMs, External Secrets Operator,
+      least-privilege service accounts, and Renovate dependency automation,
+      resolving *[X]+ vulnerable dependencies/quarter* automatically.],
   ),
   (
     dates: "2019", org: "Signafire", role: "DevOps Engineer",
     desc: [Established DevOps practices: migrated monitoring to Sensu with
-      Grafana/Graphite dashboards, built Ansible roles for custom Node and
-      Clojure apps, and authored reusable Terraform/Terragrunt modules for
-      turn-key infrastructure. Implemented JumpCloud LDAP across JIRA,
-      Confluence, GSuite, and GitLab.],
+      Grafana/Graphite dashboards covering *[X] hosts/services*, built Ansible
+      roles for custom Node and Clojure apps, and authored reusable
+      Terraform/Terragrunt modules cutting new-environment provisioning time
+      from *[X] days to [Y] hours*. Implemented JumpCloud LDAP across JIRA,
+      Confluence, GSuite, and GitLab for *[X] users*.],
   ),
   (
     dates: "2013 – 2019", org: "Xeno Media", role: "Lead Developer",
     desc: [Developed, promoted, and maintained a CI/CD workflow with GitHub,
       Jenkins, and commit-based Behat testing on full LAMP stacks (DigitalOcean
-      hosted). Created Ansible playbooks for server builds. Adapted Docker4Drupal
-      with custom robo.li commands for single-command startup. Linked JIRA,
-      GitHub, and Jenkins to Slack. Built Drupal modules for client projects,
-      including CSV and Salesforce import.],
+      hosted), cutting release cycle time from *[X] to [Y]* and catching
+      *[Z]%* of regressions pre-deploy. Created Ansible playbooks for server
+      builds, reducing new-server setup from *[X] hours to [Y] minutes*.
+      Adapted Docker4Drupal with custom robo.li commands for single-command
+      startup. Linked JIRA, GitHub, and Jenkins to Slack. Built Drupal modules
+      for client projects, including CSV and Salesforce import, serving
+      *[X]+ client sites*.],
   ),
   (
     dates: "2008 – 2013", org: "Duo Consulting", role: "Drupal Maintenance / Operations Developer",
-    desc: [Maintained and tuned performance for hosted Drupal sites —
-      troubleshooting, slow-query analysis, and query optimization — and built
-      new modules with project managers and clients.],
+    desc: [Maintained and tuned performance for *[X]+* hosted Drupal sites —
+      troubleshooting, slow-query analysis, and query optimization —
+      improving average page load times by *[Z]%*, and built new modules with
+      project managers and clients.],
   ),
   (
     dates: "2006 – 2008", org: "Vitaltype", role: "Lead Developer",
-    desc: [Architected a HIPAA-compliant medical transcription system; migrated
-      it from a ColdFusion / SQL Server application to Flex on AWS (EC2, RDS)
-      using LiveCycle Data Services.],
+    desc: [Architected a HIPAA-compliant medical transcription system serving
+      *[X]+* users; migrated it from a ColdFusion / SQL Server application to
+      Flex on AWS (EC2, RDS) using LiveCycle Data Services, improving
+      turnaround time by *[Z]%*.],
   ),
-)
-
-#let awards = (
-  (year: "2021", title: "AWS Certified Cloud Practitioner"),
-  (year: "2018", title: "Jenkins Engineer"),
 )
 
 #let contributions = (
@@ -96,7 +99,7 @@
 #set document(title: name + " — Résumé", author: name)
 #set page(
   paper: "us-letter",
-  margin: (x: 1.7cm, top: 1.2cm, bottom: 1.0cm),
+  margin: (x: 1.7cm, top: 1.0cm, bottom: 0.8cm),
   footer: context [
     #set text(size: 7.5pt, fill: muted)
     #name #h(1fr) #version
@@ -107,12 +110,12 @@
 
 // Section heading: accent label + hairline rule
 #let section(title) = {
-  v(0.25em)
-  block(below: 0.4em)[
+  v(0.15em)
+  block(below: 0.3em)[
     #text(size: 11pt, weight: "bold", fill: accent, tracking: 0.06em)[
       #upper(title)
     ]
-    #v(0.2em)
+    #v(0.15em)
     #line(length: 100%, stroke: 0.6pt + accent.lighten(40%))
   ]
 }
@@ -126,7 +129,7 @@
 )
 
 // One experience / contribution entry
-#let entry(dates, org, role, desc) = block(below: 0.55em)[
+#let entry(dates, org, role, desc) = block(below: 0.4em)[
   #grid(
     columns: (3.4cm, 1fr),
     gutter: 0.6em,
@@ -170,13 +173,3 @@
 
 #section("Professional Contributions")
 #for c in contributions { entry(c.dates, c.org, c.role, c.desc) }
-
-#section("Awards")
-#for a in awards {
-  block(below: 0.4em)[
-    #grid(columns: (3.4cm, 1fr), gutter: 0.6em,
-      [#text(size: 9pt, fill: muted)[#a.year]],
-      [#a.title],
-    )
-  ]
-}
